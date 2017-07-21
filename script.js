@@ -9,20 +9,23 @@ var multiplier = 1;
 var displayTwo = document.getElementById("display2");
 
 /* Clicker function *
- * Increase user's score by 1. */
+ * Increase user's score by clicking. */
 function increaseScore() {
     score = score + multiplier;
     document.getElementById("display").innerHTML = score;
 }
 
 /* Multiply function *
- * Increase multiplier. */
+ * Increase multiplier if score is big enough. */
 function increaseMultiplier() {
-    multiplier = multiplier + 1;
-    document.getElementById("display2").innerHTML = multiplier;
-    if (multiplier = multiplier + 1) {
+    if (score > 50) {
+        multiplier = multiplier + 1;
+        document.getElementById("display2").innerHTML = multiplier;
         score = score - 50;
         document.getElementById("display").innerHTML = score;
     }
-    /* Action needs to take place when clicked, not at the next click */
+    else {
+        alert("Sorry dude, you didn't score enough to own this.");
+        // CHANGE ALERT METHOD LATER
+    }
 }
