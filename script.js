@@ -20,4 +20,9 @@ function increaseScore() {
 function increaseMultiplier() {
     multiplier = multiplier + 1;
     document.getElementById("display2").innerHTML = multiplier;
+    if (multiplier = multiplier + 1) {
+        score = score - 50;
+        document.getElementById("display").innerHTML = score;
+    }
+    /* Action needs to take place when clicked, not at the next click */
 }
