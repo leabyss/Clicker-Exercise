@@ -11,7 +11,7 @@ var displayTwo = document.getElementById("display2");
 /* Clicker function *
  * Increase user's score by 1. */
 function increaseScore() {
-    score = score + 1;
+    score = score + multiplier;
     document.getElementById("display").innerHTML = score;
 }
 
@@ -20,8 +20,4 @@ function increaseScore() {
 function increaseMultiplier() {
     multiplier = multiplier + 1;
     document.getElementById("display2").innerHTML = multiplier;
-    score = multiplier;
-    /* When "multiply" is clicked *
-     * score increases according to the multiplier *
-     * example : x2 = 2 / x12 = 12 etc... */
 }
