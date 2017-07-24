@@ -2,21 +2,39 @@
 <!-- FAIRE QUELQUE CHOSE DE PLUS DOUX ET POETIQUE APRES, LAISSE PARLER L'ARTISTE EN TOI -->
 <html>
     <head>
-        <title>Cute bunny clicker</title>
+        <meta charset="utf-8">
+        <title>Green clicker</title>
+        <link rel="icon" href="img/daisy.png">
         <script type="text/javascript" src="script.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Nothing+You+Could+Do" rel="stylesheet">
         <link type="text/css" href="style.css" rel="stylesheet">
     </head>
     
+    <header>
+        <h1>Green clicker</h1>
+        <h2>Click the leaf below to collect leaves.</h2>
+    </header>
+    
     <body>
-        <input id="clicker" type="image" src="img/cute_bunny.png" onclick="increaseScore()">
-        <div id="multiply_box">
-            <input id="multiplier" type="image" src="img/multiplier.png" onclick="increaseMultiplier()">
-            <div id="display2">x 1</div>
-            <div id="cost">Need 50 to increase click.</div>
-        </div>
-        <div id="score_box">
-            <p>&hearts; Score &hearts; </p>
-            <div id="display" value="0"></div>
-        </div>
+         <div id="content">
+            <section class="column info_box">
+                <div id="multiply_box">
+                    <div id="cost">You need 50 leaves to increase your collecting skills !</div>
+                    <button id="multiplier" type="button" onclick="increaseMultiplier()"> Leaves collected by click&nbsp; <div id="display2">: 1</div> </button>
+                    <div id="autoClickCost">You need 500 leaves to unlock auto-collect !</div>
+                    <button id="auto_clicker" type="button" onclick="autoClick()">Auto-collect</button>
+                    <div id="flowerPowerCost">Use 5000 leaves to  activate Flower Power !</div>
+                    <button id="flowerPower" type="button" onclick="flowerPower()">Flower Power</button>
+                </div>  
+            </section>
+
+            <section class="column clicker_box">
+                <input id="clicker" type="image" src="img/leaf.png" onclick="increaseScore()">
+                <div id="score_box">
+                    <p>Leaves</p>
+                    <div id="display" value="0">0</div>
+                </div>  
+            </section>
+         </div>
     </body>
 </html>

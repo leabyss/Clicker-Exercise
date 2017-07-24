@@ -1,48 +1,105 @@
 /* Réorganiser le CSS après */
 html {
-    background-image: url(img/background.jpg);
+    background-image: url(img/background_12v2.jpg);
     background-size: cover;
+}
+
+/* ----------------- HEADER ----------------- */
+h1 {
+    font-family: 'Nothing You Could Do', cursive;
+    font-weight: 100;
+    font-size: 12vh;
+    margin: 5vh 0 0;
+    color: #4D9151;
+    text-align: center;
+    background: -webkit-linear-gradient(bottom, #4D9151, #90CE33, #FF96A6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+h2 {
+    font-family: 'Amatic SC', cursive;
+    font-weight: 100;
+    font-size: 5vh;
+    letter-spacing: 1px;
+    margin: -3vh 0 5vh;
+    color: white;
+    text-align: center;
+    text-shadow: 1px 1px 6px black;
+}
+
+/* ----------------- COLUMNS ----------------- */
+.column {
+    display: inline-block;
+    width: 40vw;
     text-align: center;
 }
 
-#display {
-    color: deeppink;
-    font-family: sans-serif;
-    font-size: 4em;
+#content {  
 }
 
-#display2, #cost {
-    color: darkslateblue;
-    font-family: sans-serif;
-    font-size: 1em;
-    font-weight: bold;
+/* ----------------- CLICKER & SCORE ----------------- */
+.clicker_box {
 }
-
-/* #multiply_box > p {
-    color: darkslateblue;
-    font-family: sans-serif;
-    font-size: 0.8em;
-    font-weight: bold;
-} */
-
 #score_box > p {
-    color: deeppink;
-    font-family: sans-serif;
-    font-size: 2em;
-    text-transform: uppercase;
-    margin: 0;
+    color: #90CE33;
+    font-size: 7.5vh;
+    font-family: 'Amatic SC', cursive;
+    margin: -4vh 0 0;
 }
 
-#score_box {
-    background-color: RGBA(255, 255, 255, 0.5);
-    width: 20vw;
-    margin: 2vh auto;
-    padding: 0.5em;
+#clicker {
+    transform: scale(0.6);
+    transition: 0.5s;
+}
+#clicker:hover {
+    transform: rotate(7deg) scale(0.6);
+}
+#clicker:active {
+    transform: rotate(7deg) scale(0.5);
 }
 
-#multiply_box {
-    background-color: RGBA(255, 255, 255, 0.5);
-    width: 20vw;
-    margin: 0 auto;
-    padding: 0.5em;
+#display {
+    color: #4D9151;
+    font-family: 'Amatic SC', cursive;
+    font-size: 7.5vh;
+}
+
+/* ----------------- INFOS ----------------- */
+.info_box {
+    float: left;
+    padding: 15vh 0 10vh;
+    background-color: RGBA(255, 255, 255, 0.8);
+    border-radius: 100%;
+    height: 60vh;
+}
+
+#cost, #autoClickCost, #flowerPowerCost {
+    color: #F7AFBA;
+    font-family: 'Amatic SC', cursive;
+    font-size: 3.7vh;
+    letter-spacing: 1px;
+    font-weight: 600;
+    margin: 2vh 0;
+}
+
+button {
+    border: 1px solid #90CE33;
+    background: none;
+    color: #90CE33;
+    font-family: 'Amatic SC', cursive;
+    font-size: 3.7vh;
+    letter-spacing: 2px;
+    cursor: pointer;
+    display: inline-flex;
+    margin-bottom: 6vh;
+    transition: 0.5s;
+}
+button:hover:enabled {
+    transform: scale(1.1) rotate(-2deg);
+    color: #F7AFBA;
+}
+button:disabled {
+    color: darkgray;
+    border-color: darkgray;
+    cursor: default;
 }
