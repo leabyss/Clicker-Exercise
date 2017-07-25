@@ -9,11 +9,26 @@ var multiplier = 1;
 var displayTwo = document.getElementById("display2");
 var cost = 50;
 var autoClickCost = 500;
-var flowerPowerCost = 20;
+var flowerPowerCost = 200;
 
-    if (score >= 20) {
-        document.getElementById("auto_clicker").removeAttribute("disabled");
+function styleScore() {
+    var clickerButton.onclick = true;
+    if (clickerButton = true) {
+    document.getElementById("little_leaves").style.opacity = "0.7";
     }
+}
+/* Disable buttons function *
+ * Disable buttons if score is not big enough. *
+ * Doesn't work, sorry. */
+function disableButtons() {
+    if (score >= cost) {
+        document.getElementById("multiplier").disabled = false;
+    }
+    else {
+        document.getElementById("multiplier").disabled = true;
+    }
+}
+
 /* Clicker function *
  * Increase user's score by clicking. */
 function increaseScore() {
@@ -59,4 +74,25 @@ function autoClick() {
 
 /* Flower Power function *
  * It's a bonus, when activated, click increase by 200% for 30 seconds */
-function flowerPower() {}
+function flowerPower() {
+    var timer = 8;
+    if (score >= flowerPowerCost) {
+        score = score - flowerPowerCost;
+        document.getElementById("display").innerHTML = score;
+        var intervalBonus = setInterval(function() {
+            score = score * 2;
+            timer = timer-1;
+            document.getElementById("flowerPower").innerHTML = timer+' sec';
+            document.getElementById("flowerPower").disabled = true;
+            if (timer === 0) {
+                document.getElementById("flowerPower").innerHTML = 'Flower Power';
+                document.getElementById("flowerPower").disabled = false;
+                clearInterval(intervalBonus);
+            }
+        }, 1000);
+    }
+    else {
+        alert("Sorry dude, you didn't score enough to own this.");
+        // CHANGE ALERT METHOD LATER
+    }
+}

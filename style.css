@@ -16,6 +16,26 @@ h1 {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+h1::before, h1::after {
+    display: inline-block;
+    content: "";
+    background: url(img/sunflower.png);
+    /*border-top: 1px solid #DEDEDE;*/
+    width: 64px;
+    height: 64px;
+    margin: -10px 30px;
+    -webkit-animation: rotation 6s linear infinite;
+}
+
+@-webkit-keyframes rotation {
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
 h2 {
     font-family: 'Amatic SC', cursive;
     font-weight: 100;
@@ -39,6 +59,7 @@ h2 {
 
 /* ----------------- CLICKER & SCORE ----------------- */
 .clicker_box {
+    margin-left: 5vw;
 }
 #score_box > p {
     color: #90CE33;
@@ -50,6 +71,7 @@ h2 {
 #clicker {
     transform: scale(0.6);
     transition: 0.5s;
+    outline: none;
 }
 #clicker:hover {
     transform: rotate(7deg) scale(0.6);
@@ -64,22 +86,42 @@ h2 {
     font-size: 7.5vh;
 }
 
+#little_leaves {
+    background-image: url(img/leaves.png);
+    width: 64px;
+    height: 64px;
+    position: absolute;
+    top: 75vh;
+    right: 35vw;
+    transform: rotate(40deg);
+    opacity: 0;
+    z-index: -1;
+}
+
 /* ----------------- INFOS ----------------- */
 .info_box {
     float: left;
-    padding: 15vh 0 10vh;
+    /*padding: 15vh 0 10vh;*/
     background-color: RGBA(255, 255, 255, 0.8);
     border-radius: 100%;
-    height: 60vh;
+    height: 70vh;
+    width: 35vw;
+    position: relative;
+    bottom: 5vh;
+    left: 1vw;
 }
 
 #cost, #autoClickCost, #flowerPowerCost {
-    color: #F7AFBA;
+    color: #F2576E;
     font-family: 'Amatic SC', cursive;
     font-size: 3.7vh;
     letter-spacing: 1px;
     font-weight: 600;
     margin: 2vh 0;
+}
+#cost {
+    margin: 8.5vh auto 2vh;
+    width: 25vw;
 }
 
 button {
@@ -91,12 +133,13 @@ button {
     letter-spacing: 2px;
     cursor: pointer;
     display: inline-flex;
-    margin-bottom: 6vh;
+    margin-bottom: 4vh;
     transition: 0.5s;
+    outline: none;
 }
 button:hover:enabled {
     transform: scale(1.1) rotate(-2deg);
-    color: #F7AFBA;
+    color: #F2576E;
 }
 button:disabled {
     color: darkgray;
