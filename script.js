@@ -11,12 +11,6 @@ var cost = 50;
 var autoClickCost = 500;
 var flowerPowerCost = 200;
 
-function styleScore() {
-    var clickerButton.onclick = true;
-    if (clickerButton = true) {
-    document.getElementById("little_leaves").style.opacity = "0.7";
-    }
-}
 /* Disable buttons function *
  * Disable buttons if score is not big enough. *
  * Doesn't work, sorry. */
